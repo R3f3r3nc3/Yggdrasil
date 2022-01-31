@@ -3,7 +3,7 @@
 function respecBuyables(layer) {
 	if (!layers[layer].buyables) return
 	if (!layers[layer].buyables.respec) return
-	if (!player[layer].noRespecConfirm && !confirm(tmp[layer].buyables.respecMessage || "Are you sure you want to respec? This will force you to do a \"" + (tmp[layer].name ? tmp[layer].name : layer) + "\" reset as well!")) return
+	if (!player[layer].noRespecConfirm && !confirm(tmp[layer].buyables.respecMessage || "Are you sure you want to respec this? This will make a \"" + (tmp[layer].name ? tmp[layer].name : layer) + "\" reset!!")) return
 	run(layers[layer].buyables.respec, layers[layer].buyables)
 	updateBuyableTemp(layer)
 	document.activeElement.blur()
@@ -261,7 +261,7 @@ function updateMilestones(layer) {
 		if (!(hasMilestone(layer, id)) && layers[layer].milestones[id].done()) {
 			player[layer].milestones.push(id)
 			if (layers[layer].milestones[id].onComplete) layers[layer].milestones[id].onComplete()
-			if (tmp[layer].milestonePopups || tmp[layer].milestonePopups === undefined) doPopup("milestone", tmp[layer].milestones[id].requirementDescription, "Milestone Gotten!", 3, tmp[layer].color);
+			if (tmp[layer].milestonePopups || tmp[layer].milestonePopups === undefined) doPopup("milestone", tmp[layer].milestones[id].requirementDescription, "Milestone Achieved!", 3, tmp[layer].color);
 			player[layer].lastMilestone = id
 		}
 	}

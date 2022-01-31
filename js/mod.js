@@ -1,28 +1,33 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
-	modFiles: ["layers.js", "tree.js"],
+	name: "Yggdrasil",
+	id: "yggthetree",
+	author: "Reference (Reference#6426)",
+	pointsName: "Points.",
+	modFiles: ["apples.js", "sidelayers.js", "tree.js"],
 
-	discordName: "",
-	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	discordName: "Mark who consumes a mic",
+	discordLink: "https://youtu.be/tJtoUnuirUw",
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	offlineLimit: 0.25,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.001 - α",
+	name: "Getting the first Alpha-ed Apples",
 }
 
-let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+let changelog = `<h1>Changelog:</h1><br><br>
+	<h2 style='color: #ff0000'>==ALPHA==</h2><br><br>
+	<h3 style='color: #ffac00'>v0.001</h3><br>
+	<h3 style='text-decoration: underline'>Getting the first Alpha-ed Apples</h3><br><br>
+		- New Layer : A [Apples].<br>
+		- New Side-Layer : ★ [Achievements].<br>
+		- 10 Upgrades.<br>
+		- 3 Achievements.<br>
+		<p style='font-size: 75%'>Endgame: 88 Apples.</p>`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = `You have made so much Apples! Need a trophy?`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -43,6 +48,13 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+
+	if (hasUpgrade('a', 11)) gain = gain.add(1)
+	if (hasUpgrade('a', 12)) gain = gain.add(2)
+	if (hasUpgrade('a', 13)) gain = gain.times(1.5)
+	if (hasUpgrade('a', 14)) gain = gain.times(upgradeEffect('a', 14))
+	if (hasUpgrade('a', 15)) gain = gain.add(upgradeEffect('a', 15))
+
 	return gain
 }
 
@@ -52,11 +64,13 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
+	"<p style='font-size: 75%'>Offline Time Limit: 15 minutes.</p>",
+	"<p style='text-decoration: underline'>Endgame: 88 Apples.</p>",
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.a.points.gte(new Decimal("88"))
 }
 
 
