@@ -2,8 +2,8 @@
 /* Prestige button */
 .reset {
 	height: 120px;
-	width: 180px;
-	border-radius: 25%;
+	width: 240px;
+	border-radius: 0%;
 	border: 4px solid;
 	border-color: rgba(0, 0, 0, 0.125);
 }
@@ -15,7 +15,7 @@
 	cursor: pointer;
 	padding: 5px 20px;
 	margin: 5px;
-	border-radius: 10px;
+	border-radius: 0px;
 	border: 2px solid;
 	color: var(--color);
 
@@ -29,15 +29,15 @@
 .tooltip { 
     pointer-events: none;
     text-align: center;
-    width: 150px;
-    font-size: 16px;
+    width: 240px;
+    font-size: 8px;
     line-height: 1.2;
     bottom: 100%;
     left: 50%;
     margin-bottom: 5px;
     transform: translateX(-50%);
     padding: 7px;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: "Courier New";
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -75,9 +75,10 @@
 	position: absolute;
 	left: 50%;
 	margin-left: -3px;
-	top: 0
+	top: 0;
+    left: 40%;
 }
 
 .hl {
-	border-top: 3px solid var(--color);
+	border-top: 2px solid var(--color);
 }

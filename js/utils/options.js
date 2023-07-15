@@ -4,11 +4,11 @@ let options = {}
 
 function getStartOptions() {
 	return {
-		autosave: true, // change to true every update
+		autosave: false, // change to true every update
 		msDisplay: "always",
 		theme: "default",
 		hqTree: false,
-		offlineProd: true, // change to true every update
+		offlineProd: false, // change to true every update
 		hideChallenges: false,
 		showStory: true,
 		forceOneTab: false,

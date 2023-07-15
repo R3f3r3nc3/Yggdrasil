@@ -1,7 +1,7 @@
 * {
-	transition-duration: 0.5s;
+	transition-duration: 0.4s;
 	text-align: center;
-	font-family: "Inconsolata", monospace;
+	font-family: "New Courier", monospace;
 	font-weight: bold;
 	table-align: center;
 	margin: auto;
@@ -52,7 +52,7 @@ td {
 
 .treeThing {
 	margin: 0 10px 0 10px;
-	vertical-align: middle;
+	vertical-align: center;
 }
 
 .can.upg:hover {
@@ -81,12 +81,12 @@ td {
 	background-color: transparent;
 	border: 1px solid transparent;
 	color: var(--color);
-	font-size: 60px;
+	font-size: 40px;
 	cursor: pointer;
 }
 
 .back:hover {
-	transform: scale(1.1, 1.1);
+	transform: scale(1.2, 1.2);
 	text-shadow: 0 0 7px var(--color);
 }
 
@@ -118,9 +118,9 @@ td {
 }
 
 .col {
-	min-width: 49.5%;
-	max-width: 49.5%;
-	width: 49.5%;
+	min-width: 39.5%;
+	max-width: 39.5%;
+	width: 39.5%;
 	height: 100%;
 	min-height: 100%;
 	column-span: 1;
@@ -138,9 +138,18 @@ td {
 	transition:color none
 }
 
+.col.left {
+	min-width: 39.5%;
+	max-width: 39.5%;
+	width: 39.5%;
+}
+
 .col.right {
 	top: 0;
 	right: 0;
+	min-width: 59.5%;
+	max-width: 59.5%;
+	width: 59.5%;
 }
 
 #app {
@@ -209,7 +218,7 @@ ul {
 	z-index: 10000;
 	pointer-events:auto;
 	position: absolute;
-	right: 55px;
+	right: 40px;
 	top: 65px;
 	background-color: transparent;
 }

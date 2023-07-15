@@ -229,7 +229,7 @@ function loadOptions() {
 
 function setupModInfo() {
 	modInfo.changelog = changelog;
-	modInfo.winText = winText ? winText : `Congratulations! You have beaten this game for this version but expect some update coming some day to ruin your save, export well! Just kidding, but you have nothing more to do here except waiting. Gratz' again!`;
+	modInfo.winText = winText ? winText : `Congratulations! You have reached the end and beaten this game, but for now...`;
 
 }
 function fixNaNs() {
@@ -274,7 +274,7 @@ function importSave(imported = undefined, forced = false) {
 		imported = prompt("Paste your save here");
 	try {
 		tempPlr = Object.assign(getStartPlayer(), JSON.parse(atob(imported)));
-		if (tempPlr.versionType != modInfo.id && !forced && !confirm("This save is for another mod, it seems you missed your Ctrl+C, dumbass.")) // Wrong save (use "Forced" to force it to accept.)
+		if (tempPlr.versionType != modInfo.id && !forced && !confirm("This save appears to be for a different mod! Are you sure you want to import?")) // Wrong save (use "Forced" to force it to accept.)
 			return;
 		player = tempPlr;
 		player.versionType = modInfo.id;
